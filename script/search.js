@@ -1,19 +1,21 @@
-let search = document.getElementById('search-box');
-search.addEventListener('keyup', showsearch);
+let search = document.getElementById('searchbox');
+search.addEventListener('keyup', ShowSearch);
 
-function showsearch() {
+
+
+function ShowSearch() {
   let input = search.value.toUpperCase();
- 
-  let figureImage = document.getElementsByClassName('Imagefigure');
-  
 
-  for (let i = 0; i < figureImage.length; i++) {
-    let cardTxt = figureImage[i].getElementsByTagName('h1')[0];
-    let cardValue = cardTxt.textContent || cardTxt.innerHTML;
-    if (cardValue.toUpperCase().indexOf(input) > -1) {
-      figureImage[i].style.display = "block";
+  let BengaliFigure = document.getElementsByClassName('BengaliFigure');
+
+
+  for (let i = 0; i < BengaliFigure.length; i++) {
+    let CardTxt = BengaliFigure[i].getElementsByTagName('h1')[0];
+    let CardValue = CardTxt.textContent || CardTxt.innerHTML;
+    if (CardValue.toUpperCase().indexOf(input) > -1) {
+      BengaliFigure[i].style.display = "block";
     } else {
-      figureImage[i].style.display = "none";
+      BengaliFigure[i].style.display = "none";
     }
   }
 
