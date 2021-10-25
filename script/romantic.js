@@ -8,43 +8,44 @@ function RomanticMovies() {
         .then((jsondata) => {
             jsondata.map((val) => {
                 key = val.id;
-                let figure = document.createElement('figure');
-                figure.classList.add("Imagefigure");
-                console.log(figure);
-                let img = document.createElement('img');
-                img.src = `https://drive.google.com/uc?id=${val.id}`;
-                img.classList.add("cardimg");
+                let RomanticFigure = document.createElement('figure');
+                RomanticFigure.classList.add("Imagefigure");
+                
+                let RomanticImg = document.createElement('img');
+                RomanticImg.src = `https://drive.google.com/uc?id=${val.id}`;
+                RomanticImg.alt= "RomanticMovies";
+                RomanticImg.classList.add("cardimg");
 
-                let figcaption = document.createElement('figcaption');
-                console.log(figcaption)
-
-
-                let figheading = document.createElement('h1');
-                let figtext = document.createTextNode(val.heading);
-                figheading.appendChild(figtext);
-
-                let figparagraph = document.createElement('p');
-                let figNode = document.createTextNode(val.paragraph);
-                figparagraph.appendChild(figNode);
-
-                let figanchor = document.createElement('a');
-                figanchor.href = "video.html";
-                figanchor.classList.add("button");
-                figanchor.classList.add("play");
-                figanchor.textContent = "Watch Movie"
-                console.log(figanchor)
+                let RomanticFigCaption = document.createElement('figcaption');
+               
 
 
-                figcaption.appendChild(figheading);
-                figcaption.appendChild(figparagraph);
-                figcaption.appendChild(figanchor);
-                figcaption.classList.add("figureImage");
+                let RomanticFigHeading = document.createElement('h1');
+                let RomanticFigText = document.createTextNode(val.heading);
+                RomanticFigHeading.appendChild( RomanticFigText );
+
+                let RomanticFigparagraph = document.createElement('p');
+                let RomanticFigNode = document.createTextNode(val.paragraph);
+                RomanticFigparagraph.appendChild( RomanticFigNode );
+
+                let RomanticFigAnchor = document.createElement('a');
+                RomanticFigAnchor.href = "#";
+                RomanticFigAnchor.classList.add("button");
+                RomanticFigAnchor.classList.add("play");
+                RomanticFigAnchor.textContent = "Watch Movie"
+                
 
 
-                figure.appendChild(img);
-                figure.appendChild(figcaption);
+                RomanticFigCaption.appendChild( RomanticFigHeading );
+                RomanticFigCaption.appendChild( RomanticFigparagraph );
+                RomanticFigCaption.appendChild( RomanticFigAnchor );
+                RomanticFigCaption.classList.add("FigureImage");
 
-                romanticdiv.appendChild(figure);
+
+                RomanticFigure.appendChild( RomanticImg );
+                RomanticFigure.appendChild( RomanticFigCaption );
+
+                romanticdiv.appendChild( RomanticFigure );
 
             })
         })
