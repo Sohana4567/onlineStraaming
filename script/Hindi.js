@@ -1,5 +1,5 @@
 function HindiMovies() {
-    const Hindidiv = document.getElementById("Hindidiv");
+    const HindiDiv = document.getElementById("HindiDiv");
     fetch("https://hindi-6d5b1-default-rtdb.firebaseio.com/Hindi.json")
         .then((apidata) => {
             return apidata.json();  //usko return karwana h taki usko further use kar shaku            
@@ -9,67 +9,66 @@ function HindiMovies() {
 
             jsondata.map((val) => {
                 key = val.id;
-                let figure = document.createElement('figure');
-                figure.classList.add("Imagefigure");
-                console.log(figure);
-                let img = document.createElement('img');
-                img.src = `https://drive.google.com/uc?id=${val.id}`;
-                img.classList.add("cardimg");
+                let HindiFigure = document.createElement('figure');
+                HindiFigure.classList.add("HindiFigure");
+               
+                let HindiImg = document.createElement('img');
+                HindiImg.src = `https://drive.google.com/uc?id=${val.id}`;
+                HindiImg.alt = "HindiMovies";
+                HindiImg.classList.add("cardimg");
 
-                let figcaption = document.createElement('figcaption');
-                console.log(figcaption)
+                let  HindiFigCaption = document.createElement('figcaption');
+                
 
                 let figul = document.createElement('ul');
                 figul.classList.add("stars")
-                console.log(figul)
+                
                 for (let i = 0; i < 5; i += 1) {
                     let figlist = document.createElement('li');
                     figlist.classList.add("star");
 
-                    console.log(figlist)
+                   
                     let figicon = document.createElement('i')
                     figicon.classList.add("fa")
                     figicon.classList.add("fa-star")
-                    figlist.appendChild(figicon);
-                    console.log(figlist)
-                    figul.appendChild(figlist)
-                    console.log(figul)
+                    figlist.appendChild( figicon );
+                    
+                    figul.appendChild( figlist )
+                    
                 }
 
-                let figheading = document.createElement('h1');
-                let figtext = document.createTextNode(val.heading);
-                figheading.appendChild(figtext);
+                let HindiFigHeading = document.createElement('h1');
+                let HindiFigText = document.createTextNode( val.heading );
+                HindiFigHeading.appendChild( HindiFigText );
 
-                let figparagraph = document.createElement('p');
-                let figNode = document.createTextNode(val.paragraph);
-                figparagraph.appendChild(figNode);
+                let HindiFigParagraph = document.createElement('p');
+                let HindiFigNode = document.createTextNode(val.paragraph);
+                HindiFigParagraph.appendChild( HindiFigNode );
 
-                let figanchor = document.createElement('a');
-                figanchor.href = val.videosrc;
-                figanchor.classList.add("button");
-                figanchor.classList.add("play");
-                figanchor.textContent = "Watch Movie"
-                console.log(figanchor)
-
-
-                figcaption.appendChild(figul);
-                figcaption.appendChild(figheading);
-                figcaption.appendChild(figparagraph);
-                figcaption.appendChild(figanchor);
-                figcaption.classList.add("figureImage");
+                let HindiFigAnchor = document.createElement('a');
+                HindiFigAnchor.href = val.videosrc;
+                HindiFigAnchor.classList.add("button");
+                HindiFigAnchor.classList.add("play");
+                HindiFigAnchor.textContent = "Watch Movie"
+               
 
 
-                figure.appendChild(img);
-                figure.appendChild(figcaption);
+                HindiFigCaption.appendChild(figul);
+                HindiFigCaption.appendChild( HindiFigHeading );
+                HindiFigCaption.appendChild( HindiFigParagraph );
+                HindiFigCaption.appendChild( HindiFigAnchor );
+                HindiFigCaption.classList.add("FigureImage");
 
-                // img.src=`https://picsum.photos/v2/list?page=2&limit=${val.id}`
-                //  img.src=`https://drive.google.com/drive/folders/1zU-e48iC6rwqKoBWzKnbNBqRgDqQpscl?usp=sharing`
-                // img.src=`https://drive.google.com/uc?id=${val.id}`
-                Hindidiv.appendChild(figure);
+
+                HindiFigure.appendChild(  HindiImg );
+                HindiFigure.appendChild( HindiFigCaption );
+
+                
+                HindiDiv.appendChild( HindiFigure );
 
             })
             const stars = document.querySelectorAll('.star');
-            console.log(stars)
+           
             for (x = 0; x < stars.length; x++) {
                 stars[x].starValue = (x + 1);
                 ["click", "mouseover", "mouseout"].forEach(function (e) {
