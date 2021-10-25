@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Online Streaming site</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/46f13881ca.js" crossorigin="anonymous"></script>
@@ -23,41 +25,29 @@
         </a>
 
         <nav class="navbar">
-            <a href="TV.html">
-                <li>TV</li>
-            </a>
-            <a href="movies.html">
-                <li>Movies</li>
-            </a>
-
-
+            <a href="TV.html" class="commonanchor">TV</a>
+            <a href="movies.html" class="commonanchor"> Movies </a>
         </nav>
         <div class="icons">
             <div class="submenu">
-                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-search" id="searchbtn"></div>
 
-                <button class="btn btn-hover">SUBSCRIBE</button>
-                <a href="#">
-                    <li>LOGIN</li>
-                </a>
-                <div class="profile-container">
-                    <img src="../img/profile.png" class="profile-picture" alt="">
-                    <div class="profile-text-container">
-                        <span class="profile-text">Profile</span>
-                        <i class="fas fa-caret-down"></i>
-                    </div>
+                <button class="btn btnhover">SUBSCRIBE</button>
+                <a href="#" class="commonanchor">LOGIN </a>
+                <div class="profilecontainer">
+                    <img src="../img/profile.png" class="profilepicture" alt="profile">
                 </div>
-                <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-bars" id="menubtn"></div>
                 <div class="toggle">
-                    <i class="fas fa-moon toggle-icon"></i>
-                    <i class="fas fa-sun toggle-icon"></i>
-                    <div class="toggle-ball"></div>
+                    <i class="fas fa-moon toggleicon"></i>
+                    <i class="fas fa-sun toggleicon"></i>
+                    <div class="toggleball"></div>
                 </div>
             </div>
         </div>
-        <div class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
+        <div class="searchform">
+            <input type="search" id="searchbox" placeholder="search here...">
+            <label for="searchbox" class="fas fa-search"></label>
         </div>
 
     </header>
@@ -67,11 +57,11 @@
 
         </div>
 
-        <div class="slider-navigation">
-            <div class="nav-btn active"></div>
-            <div class="nav-btn"></div>
-            <div class="nav-btn"></div>
-            <div class="nav-btn"></div>
+        <div class="slidernavigation">
+            <div class="navbtn active"></div>
+            <div class="navbtn"></div>
+            <div class="navbtn"></div>
+            <div class="navbtn"></div>
         </div>
     </section>
 
@@ -82,7 +72,7 @@
                 <h1>Latest Bengali Movies</h1>
             </div>
             <div class="cardcontainer commoncardcontainer">
-                <div class="center_div commoncard" id="centerdiv">
+                <div class="centerdiv commoncard" id="centerdiv">
 
                 </div>
 
@@ -90,8 +80,8 @@
             <div class="heading commonheading">
                 <h1>Latest Hindi Movies</h1>
             </div>
-            <div class="Hindicontainer commoncardcontainer">
-                <div class="Hindi_div commoncard" id="Hindidiv">
+            <div class="HindiContainer commoncardcontainer">
+                <div class="HindiDiv commoncard" id="HindiDiv">
 
                 </div>
 
@@ -100,8 +90,8 @@
             <div class="heading commonheading">
                 <h1>Latest English Movies</h1>
             </div>
-            <div class="Englishcontainer commoncardcontainer">
-                <div class="English_div commoncard" id="Englishdiv">
+            <div class="EnglishContainer commoncardcontainer">
+                <div class="EnglishDiv commoncard" id="EnglishDiv">
 
                 </div>
 
@@ -118,7 +108,7 @@
         </div>
     </section>
     <footer>
-        <div class="footer-content">
+        <div class="footercontent">
             <h3>Hotstar</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem expedita tempora recusandae
                 repudiandae soluta commodi atque itaque vitae quis possimus. Id, eos? Deserunt ullam, officia dolor quo
@@ -130,7 +120,7 @@
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
             </ul>
         </div>
-        <div class="footer-bottom">
+        <div class="footerbottom">
             <p>copyright &copy;2020 Hotstar,designed by<span>sohana</span></p>
         </div>
     </footer>
@@ -142,7 +132,7 @@
     <script src="../script/Hindi.js"></script>
     <script src="../script/English.js"></script>
     <script src="../script/cardslider.js"></script>
-    <script src="../script/Imageslider.js"></script>
+    
 
 
 </body>
