@@ -1,5 +1,5 @@
-const ball = document.querySelector(".toggle-ball");
-const items = document.querySelectorAll(".bodybg,.heading");
+const ball = document.querySelector(".toggleball");
+const items = document.querySelectorAll(".bodybg,.header,.heading");
 ball.addEventListener("click", () => {
     items.forEach(item => {
         item.classList.toggle( "active" );
