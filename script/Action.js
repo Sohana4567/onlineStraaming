@@ -1,6 +1,5 @@
-
 function ActionMovies() {
-    const Actiondiv = document.getElementById( "Actiondiv" );
+    const ActionDiv = document.getElementById( "ActionDiv" );
     fetch("https://action-46aa9-default-rtdb.firebaseio.com/action/action.json")
         .then((apidata) => {
             return apidata.json();  //usko return karwana h taki usko further use kar shaku            
@@ -11,41 +10,42 @@ function ActionMovies() {
             jsondata.map((val) => {
 
                 key = val.id;
-                let figure = document.createElement('figure');
-                figure.classList.add("Imagefigure");
+                let ActionFigure = document.createElement('figure');
+                ActionFigure.classList.add("ActionFigure");
                
 
-                let img = document.createElement( 'img' );
-                img.src = `https://drive.google.com/uc?id=${val.id}`;
-                img.classList.add( "cardimg" );
+                let ActionImg = document.createElement( 'img' );
+                ActionImg.src = `https://drive.google.com/uc?id=${val.id}`;
+                ActionImg.alt = "ActionMovies"
+                ActionImg.classList.add( "cardimg" );
 
-                let figcaption = document.createElement( 'figcaption' );
+                let ActionFigcaption = document.createElement( 'figcaption' );
                
 
-                let figheading = document.createElement( 'h1' );
-                let figtext = document.createTextNode( val.heading );
-                figheading.appendChild( figtext );
+                let ActionFigHeading = document.createElement( 'h1' );
+                let ActionFigText = document.createTextNode( val.heading );
+                ActionFigHeading.appendChild( ActionFigText );
 
-                let figparagraph = document.createElement( 'p' );
-                let figNode = document.createTextNode( val.paragraph );
-                figparagraph.appendChild( figNode );
+                let ActionFigParagraph = document.createElement( 'p' );
+                let ActionFigNode = document.createTextNode( val.paragraph );
+                ActionFigParagraph.appendChild( ActionFigNode );
 
-                let figanchor = document.createElement( 'a' );
-                figanchor.href = "#";
-                figanchor.classList.add("button");
-                figanchor.classList.add("play");
-                figanchor.textContent = "Watch Movie"
+                let ActionFigAnchor = document.createElement( 'a' );
+                ActionFigAnchor.href = "#";
+                ActionFigAnchor.classList.add("button");
+                ActionFigAnchor.classList.add("play");
+                ActionFigAnchor.textContent = "Watch Movie"
                
 
-                figcaption.appendChild( figheading );
-                figcaption.appendChild( figparagraph );
-                figcaption.appendChild( figanchor );
-                figcaption.classList.add( "figureImage" );
+                ActionFigcaption.appendChild( ActionFigHeading );
+                ActionFigcaption.appendChild( ActionFigParagraph );
+                ActionFigcaption.appendChild( ActionFigAnchor );
+                ActionFigcaption.classList.add( "FigureImage" );
 
 
-                figure.appendChild( img );
-                figure.appendChild( figcaption );
-                Actiondiv.appendChild( figure );
+                ActionFigure.appendChild( ActionImg );
+                ActionFigure.appendChild( ActionFigcaption );
+                ActionDiv.appendChild( ActionFigure );
 
             })
         })
@@ -56,3 +56,5 @@ function ActionMovies() {
 }
 
 ActionMovies();
+
+
