@@ -1,5 +1,5 @@
-function HindiMovies() {
-    const Englishdiv = document.getElementById("Englishdiv");
+function  EnglishMovies() {
+    const EnglishDiv = document.getElementById("EnglishDiv");
     fetch("https://english-23010-default-rtdb.firebaseio.com/English.json")
         .then((apidata) => {
             return apidata.json();  //usko return karwana h taki usko further use kar shaku            
@@ -9,16 +9,16 @@ function HindiMovies() {
 
             jsondata.map((val) => {
                 key = val.id;
-                let figure = document.createElement('figure');
-                figure.classList.add("Imagefigure");
-                console.log(figure);
-                let img = document.createElement('img');
-                img.src = `https://drive.google.com/uc?id=${val.id}`;
-                img.classList.add("cardimg");
+                let EnglishFigure = document.createElement('figure');
+                EnglishFigure.classList.add("EnglishFigure");
+               
+                let EnglishImg = document.createElement('img');
+                EnglishImg.src = `https://drive.google.com/uc?id=${val.id}`;
+                EnglishImg.alt="EnglishMovies";
+                EnglishImg.classList.add("cardimg");
 
-                let figcaption = document.createElement('figcaption');
-                console.log(figcaption)
-
+                let EnglishFigCaption = document.createElement('figcaption');
+                
                 let figul = document.createElement('ul');
                 figul.classList.add("stars")
                 console.log(figul)
@@ -36,36 +36,35 @@ function HindiMovies() {
                     console.log(figul)
                 }
 
-                let figheading = document.createElement('h1');
-                let figtext = document.createTextNode(val.heading);
-                figheading.appendChild(figtext);
+                let EnglishFigHeading = document.createElement('h1');
+                let EnglishFigText = document.createTextNode(val.heading);
+                EnglishFigHeading.appendChild( EnglishFigText );
 
-                let figparagraph = document.createElement('p');
-                let figNode = document.createTextNode(val.paragraph);
-                figparagraph.appendChild(figNode);
+                let EnglishFigParagraph = document.createElement('p');
+                let EnglishFigNode = document.createTextNode(val.paragraph);
+                EnglishFigParagraph.appendChild( EnglishFigNode );
 
-                let figanchor = document.createElement('a');
-                figanchor.href = val.videosrc;
-                figanchor.classList.add("button");
-                figanchor.classList.add("play");
-                figanchor.textContent = "Watch Movie"
-                console.log(figanchor)
-
-
-                figcaption.appendChild(figul);
-                figcaption.appendChild(figheading);
-                figcaption.appendChild(figparagraph);
-                figcaption.appendChild(figanchor);
-                figcaption.classList.add("figureImage");
+                let EnglishFigAnchor = document.createElement('a');
+                EnglishFigAnchor.href = val.videosrc;
+                EnglishFigAnchor.classList.add("button");
+                EnglishFigAnchor.classList.add("play");
+                EnglishFigAnchor.textContent = "Watch Movie"
+               
 
 
-                figure.appendChild(img);
-                figure.appendChild(figcaption);
-                Englishdiv.appendChild(figure);
+                EnglishFigCaption.appendChild( figul );
+                EnglishFigCaption.appendChild( EnglishFigHeading );
+                EnglishFigCaption.appendChild( EnglishFigParagraph );
+                EnglishFigCaption.appendChild( EnglishFigAnchor );
+                EnglishFigCaption.classList.add("FigureImage");
+
+
+                EnglishFigure.appendChild( EnglishImg );
+                EnglishFigure.appendChild( EnglishFigCaption );
+                EnglishDiv.appendChild( EnglishFigure );
 
             })
             const stars = document.querySelectorAll('.star');
-            console.log(stars)
             for (x = 0; x < stars.length; x++) {
                 stars[x].starValue = (x + 1);
                 ["click", "mouseover", "mouseout"].forEach(function (e) {
@@ -107,5 +106,5 @@ function showRating(e) {
     })
 }
 
-HindiMovies();
+EnglishMovies();
 
