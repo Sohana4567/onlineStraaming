@@ -1,4 +1,4 @@
-function product() {
+function BengaliMovie() {
     const centerdiv = document.getElementById("centerdiv");
     fetch("https://card-42e9a-default-rtdb.firebaseio.com/card.json")
         .then((apidata) => {
@@ -8,16 +8,17 @@ function product() {
             jsondata.map((val) => {
                 key = val.id;
                 videosrc = `https://drive.google.com/uc?id=${val.videoid}`;
-                let figure = document.createElement('figure');
-                figure.setAttribute('data-src', videosrc);
-                figure.classList.add("Imagefigure");
+                let BengaliFigure = document.createElement('figure');
+                BengaliFigure.setAttribute('data-src', videosrc);
+                BengaliFigure.classList.add("BengaliFigure");
 
 
-                let img = document.createElement('img');
-                img.src = `https://drive.google.com/uc?id=${val.id}`;
-                img.classList.add("cardimg");
+                let BengaliImg = document.createElement('img');
+                BengaliImg.src = `https://drive.google.com/uc?id=${val.id}`;
+                BengaliImg.alt = "BengaliMovie";
+                BengaliImg.classList.add("cardimg");
 
-                let figcaption = document.createElement('figcaption');
+                let BengaliFigCaption = document.createElement('figcaption');
 
 
                 let figul = document.createElement('ul');
@@ -32,31 +33,31 @@ function product() {
                     figul.appendChild(figlist);
                 }
 
-                let figheading = document.createElement('h1');
-                let figtext = document.createTextNode(val.heading);
-                figheading.appendChild(figtext);
+                let BengaliFigHeading = document.createElement('h1');
+                let BengaliFigText = document.createTextNode(val.heading);
+                BengaliFigHeading.appendChild(BengaliFigText);
 
-                let figparagraph = document.createElement('p');
-                let figNode = document.createTextNode(val.paragraph);
-                figparagraph.appendChild(figNode);
+                let BengaliFigParagraph = document.createElement('p');
+                let BengaliFigNode = document.createTextNode(val.paragraph);
+                BengaliFigParagraph.appendChild(BengaliFigNode);
 
-                let figanchor = document.createElement('a');
-                figanchor.classList.add("button");
-                figanchor.classList.add("play");
-                figanchor.textContent = "Watch Movie";
-
-
-                figcaption.appendChild(figul);
-                figcaption.appendChild(figheading);
-                figcaption.appendChild(figparagraph);
-                figcaption.appendChild(figanchor);
-                figcaption.classList.add("figureImage");
+                let BengaliFigAnchor = document.createElement('a');
+                BengaliFigAnchor.classList.add("button");
+                BengaliFigAnchor.classList.add("play");
+                BengaliFigAnchor.textContent = "Watch Movie";
 
 
-                figure.appendChild(img);
-                figure.appendChild(figcaption);
+                BengaliFigCaption.appendChild(figul);
+                BengaliFigCaption.appendChild(BengaliFigHeading);
+                BengaliFigCaption.appendChild(BengaliFigParagraph);
+                BengaliFigCaption.appendChild(BengaliFigAnchor);
+                BengaliFigCaption.classList.add("FigureImage");
 
-                centerdiv.appendChild(figure);
+
+                BengaliFigure.appendChild(BengaliImg);
+                BengaliFigure.appendChild(BengaliFigCaption);
+
+                centerdiv.appendChild(BengaliFigure);
 
                 var x = document.getElementById('centerdiv').querySelectorAll('.play');
                 x.forEach((ele) => {
@@ -86,10 +87,16 @@ function product() {
 function getMovie(path) {
     let videoid = document.getElementById("videodiv");
     let html = "";
-    html += `<video width="600" height="600" controls>
+    html += `<video id="videoid" width="600" height="600" controls>
     <source src="${path}">
-    </video>`
+    </video>
+    <button id="CloseButton" onclick="closeVideo()" > x </button>
+    `
     videoid.innerHTML = html;
+}
+function closeVideo() {
+    document.getElementById("videoid").style.display = 'none';
+    document.getElementById('CloseButton').style.display = 'none'
 }
 
 
@@ -118,6 +125,6 @@ function showRating(e) {
     })
 }
 
-product();
+BengaliMovie();
 
 
